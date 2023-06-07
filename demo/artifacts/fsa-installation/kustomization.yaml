@@ -12,7 +12,7 @@ patches:
         app.kubernetes.io/name: argocd-cm
         app.kubernetes.io/part-of: argocd
     data:
-      users.anonymous.enabled: "false"
+      users.anonymous.enabled: "true"
   target:
     kind: ConfigMap
     name: argocd-cm
@@ -25,7 +25,7 @@ patches:
         app.kubernetes.io/part-of: argocd
       name: argocd-rbac-cm
     data:
-      policy.default: role:readonly
+      policy.default: role:admin
       policy.csv: |
         p, role:readonly, applications, get, default/*, allow
         p, role:readonly, applications, sync, default/*, allow
