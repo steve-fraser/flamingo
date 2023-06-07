@@ -42,3 +42,29 @@ spec:
     syncOptions:
     - ApplyOutOfSyncOnly=true
     - FluxSubsystem=true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: podinfo
+  namespace: argocd
+  annotations:
+    weave.gitops.flamingo/base-url: "https://demo3.weavegitops.com"
+    weave.gitops.flamingo/cluster-name: "default%2Fflamingo-host25-cluster-33"
+spec:
+  project: default
+  source:
+    repoURL: 'https://stefanprodan.github.io/podinfo'
+    targetRevision: 6.3.6
+    chart: podinfo
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: podinfo-helm
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - FluxSubsystem=true
+      - AutoCreateFluxResources=true
+      - CreateNamespace=true
