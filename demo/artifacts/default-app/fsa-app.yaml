@@ -81,7 +81,7 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/stefanprodan/podinfo'
-    path: kustomize
+    path: deploy/overlays/dev
     targetRevision: master
   destination:
     server: 'https://kubernetes.default.svc'
