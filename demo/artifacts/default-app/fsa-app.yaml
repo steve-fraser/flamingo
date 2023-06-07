@@ -27,8 +27,8 @@ metadata:
   name: fsa-installation
   namespace: argocd
   annotations:
-    weave.gitops.flamingo/base-url: "http://localhost:9001"
-    weave.gitops.flamingo/cluster-name: "Default"
+    weave.gitops.flamingo/base-url: "https://demo3.weavegitops.com"
+    weave.gitops.flamingo/cluster-name: "flamingo-host25-cluster-33"
 spec:
   destination:
     namespace: argocd
