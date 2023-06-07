@@ -11,7 +11,7 @@ metadata:
   namespace: argocd
   annotations:
     metadata.weave.works/flamingo-fsa-installation: "https://localhost:8080/applications/argocd/fsa-installation?view=tree"
-    link.argocd.argoproj.io/external-link: "https://demo3.weavegitops.com/kustomize/details?clusterName=Default&name=fsa-installation&namespace=argocd"
+    link.argocd.argoproj.io/external-link: "https://demo3.weavegitops.com/kustomize/details?clusterName=default%2Fflamingo-host25-cluster-33&name=fsa-installation&namespace=argocd"
 spec:
   prune: true
   interval: 2m
