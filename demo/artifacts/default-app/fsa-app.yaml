@@ -68,3 +68,26 @@ spec:
       - FluxSubsystem=true
       - AutoCreateFluxResources=true
       - CreateNamespace=true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: podinfo-git
+spec:
+  destination:
+    name: ''
+    namespace: podinfo
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: kustomize
+    repoURL: 'https://github.com/stefanprodan/podinfo'
+    targetRevision: master
+    kustomize:
+      namespace: podinfo
+  sources: []
+  project: default
+  syncPolicy:
+    syncOptions:
+      - FluxSubsystem=true
+      - AutoCreateFluxResources=true
+      - CreateNamespace=true
