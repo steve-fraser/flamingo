@@ -82,8 +82,7 @@ spec:
     path: kustomize
     repoURL: 'https://github.com/stefanprodan/podinfo'
     targetRevision: master
-    kustomize:
-      namespace: podinfo
+
   sources: []
   project: default
   syncPolicy:
