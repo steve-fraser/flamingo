@@ -12,7 +12,7 @@ patches:
         app.kubernetes.io/name: argocd-cm
         app.kubernetes.io/part-of: argocd
     data:
-      users.anonymous.enabled: "true"
+      users.anonymous.enabled: "false"
   target:
     kind: ConfigMap
     name: argocd-cm
