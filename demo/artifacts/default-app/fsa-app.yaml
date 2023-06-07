@@ -68,3 +68,23 @@ spec:
       - FluxSubsystem=true
       - AutoCreateFluxResources=true
       - CreateNamespace=true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: podinfo-git
+  namespace: argocd
+  annotations:
+    weave.gitops.flamingo/base-url: "https://demo3.weavegitops.com"
+    weave.gitops.flamingo/cluster-name: "default%2Fflamingo-host25-cluster-33"
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/stefanprodan/podinfo'
+    path: kustomize
+    targetRevision: master
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: podinfo
+
+      
