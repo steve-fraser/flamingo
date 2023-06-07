@@ -6,7 +6,7 @@ metadata:
   namespace: argocd
   annotations:
     weave.gitops.flamingo/base-url: "https://demo3.weavegitops.com"
-    weave.gitops.flamingo/cluster-name: "Default"
+    weave.gitops.flamingo/cluster-name: "default%2Fflamingo-host25-cluster-33"
 spec:
   destination:
     namespace: argocd
@@ -28,7 +28,7 @@ metadata:
   namespace: argocd
   annotations:
     weave.gitops.flamingo/base-url: "https://demo3.weavegitops.com"
-    weave.gitops.flamingo/cluster-name: "flamingo-host25-cluster-33"
+    weave.gitops.flamingo/cluster-name: "default%2Fflamingo-host25-cluster-33"
 spec:
   destination:
     namespace: argocd
