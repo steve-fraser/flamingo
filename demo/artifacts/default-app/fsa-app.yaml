@@ -86,5 +86,11 @@ spec:
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: podinfo
-
-      
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - FluxSubsystem=true
+      - AutoCreateFluxResources=true
+      - CreateNamespace=true
